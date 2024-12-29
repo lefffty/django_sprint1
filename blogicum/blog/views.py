@@ -47,14 +47,15 @@ posts = [
 
 # Create your views here.
 def index(request):
+    reversed_posts = posts[::-1]
     context = {
-        'posts': posts.reverse(),
+        'posts': reversed_posts,
     }
 
     return render(
-        request=request,
-        template_name='index.html',
-        context=context
+        request,
+        'blog/index.html',
+        context
     )
 
 
@@ -64,9 +65,9 @@ def post_detail(request, id):
         'post': post
     }
     return render(
-        request=request,
-        template_name='detail.html',
-        context=context,
+        request,
+        'blog/detail.html',
+        context,
     )
 
 
@@ -75,7 +76,7 @@ def category_posts(request, category_slug):
         'category_name': category_slug
     }
     return render(
-        request=request,
-        template_name='category.html',
-        context=context,
+        request,
+        'blog/category.html',
+        context,
     )
