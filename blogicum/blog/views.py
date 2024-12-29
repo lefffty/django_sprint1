@@ -70,7 +70,7 @@ def post_detail(request, id):
     )
 
 
-def category_posts(request,category_slug):
+def category_posts(request, category_slug):
     context = {
         'category_name': category_slug
     }
