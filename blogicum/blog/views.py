@@ -48,7 +48,7 @@ posts = [
 # Create your views here.
 def index(request):
     context = {
-        'posts': posts,
+        'posts': posts.reverse(),
     }
 
     return render(
